@@ -86,3 +86,25 @@ li {
         grid-template-columns: 1fr;
     }
 }
+
+/* Container for the social icons */
+.social-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* Size and hover effect for the icon images */
+.social-icon {
+    width: 28px;
+    height: 28px; 
+    object-fit: contain;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+/* Subtle hover animation when user passes cursor over icon */
+.social-icon:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
