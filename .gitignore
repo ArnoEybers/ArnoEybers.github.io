@@ -1,0 +1,15 @@
+# Visual Studio temporary & configuration folders
+.vs/
+*.user
+*.userosv
+*.suo
+bin/
+obj/
+
+# Operating System temporary files
+.DS_Store
+Thumbs.db
+
+# Optional: Ignore draft images or source design files (Photoshop, Figma drafts, etc.)
+*.psd
+*.ai
