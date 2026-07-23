@@ -212,3 +212,77 @@ li {
   transform: translateY(-2px);
   opacity: 0.9;
 }
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.project-card {
+    background-color: var(--btn-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--link-color);
+}
+
+.project-title {
+    font-size: 11pt;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.project-title a {
+    text-decoration: none;
+}
+
+.project-title a:hover {
+    text-decoration: underline;
+}
+
+.project-desc {
+    font-size: 10pt;
+    color: var(--text-color);
+    opacity: 0.85;
+    margin-bottom: 6px;
+}
+
+.project-meta {
+    font-size: 9pt;
+    color: var(--section-title-color);
+}
+
+.contributions-container {
+    width: 100%;
+    overflow-x: auto; /* Adds smooth scrolling on small screens */
+    padding: 10px 0;
+}
+
+.contrib-chart {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Light mode (default): Show light chart, hide dark chart */
+.chart-light {
+    display: block;
+}
+.chart-dark {
+    display: none;
+}
+
+/* Dark mode: Show dark chart, hide light chart */
+body.dark-mode .chart-light {
+    display: none;
+}
+body.dark-mode .chart-dark {
+    display: block;
+}
