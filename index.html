@@ -14,19 +14,24 @@
         <aside class="sidebar">
             <img id="imgProfile" alt="Arno Eybers Profile Picture" src="profile.jpg" class="profile-pic">
             
-            <button id="theme-toggle">Toggle Dark Mode</button>
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+				<!-- Image shown in Dark Mode-->
+				<img src="sun-icon.png" alt="Light mode" class="theme-icon sun-icon">
+				
+				<!-- Image shown in Light Mode-->
+				<img src="moon-icon.png" alt="Dark mode" class="theme-icon moon-icon">
+			</button>
             
             <h2 class="section-title">Other Experience</h2>
             <p><strong>North-West University:</strong></p>
+			<p>Student assistant (CMPG 222)</p>
+            <ul class="sub-list">
+                <li>Jul 2026 – Present</li>
+            </ul>
             <p>Student assistant (CMPG 111)</p>
             <ul class="sub-list">
                 <li>Feb 2026 – Jun 2026</li>
                 <li>Feb 2025 – Jun 2025</li>
-            </ul>
-
-            <p>Matlab Onramp</p>
-            <ul class="sub-list">
-                <li>Issued in 2024</li>
             </ul>
         </aside>
 
@@ -36,7 +41,6 @@
                 <h1>Arno Eybers</h1>
                 <p><strong>Contact info:</strong></p>
                 <p>Email: <a href="mailto:ArnoEybers@GMail.com">ArnoEybers@GMail.com</a></p>
-                <p>Cell: +27 64 683 2256</p>
                 
                 <div class="social-links">
                     <a href="http://www.linkedin.com/in/arno-eybers-79b53728a" target="_blank" rel="noopener noreferrer">
@@ -49,9 +53,11 @@
             </header>
 
             <section>
-                <h2 class="section-title">Profile</h2>
-                <p>I am currently a student at the NWU hoping to pursue my honours degree and eventually become a Data Analyst.</p>
-                <p>I love a challenge and will do my best to accomplish any goal set before me.</p>
+                <h2 class="section-title">About Me</h2>
+				<p><strong>Hello! I'm Arno.</strong><br>
+                I am currently a student at the NWU hoping to pursue my honours degree and eventually become a Data Analyst.<br>
+				I have a love for programming and problem solving with the use of technology.<br>
+                I love a challenge and will do my best to accomplish any goal set before me.</p>
             </section>
 
             <section>
@@ -63,7 +69,7 @@
 
                 <p><strong>Hoërskool Noordheuwel</strong></p>
                 <ul class="sub-list">
-                    <li>Highschool Diploma (2018 - 2023)</li>
+                    <li>Highschool Diploma (2019 - 2023)</li>
                 </ul>
             </section>
 
@@ -80,7 +86,11 @@
         </main>
 
     </div>
-
+	
+	<div class="download-container">
+    <a href="CV-Arno-Eybers.pdf" download="Arno Eybers - CV.pdf" class="download-btn">Download CV as a PDF</a>
+</div>
+	
     <script src="basicScript.js"></script>
 </body>
 </html>
