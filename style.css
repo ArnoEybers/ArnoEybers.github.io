@@ -4,12 +4,38 @@
     padding: 0;
 }
 
+/* Apply Variables to Elements */
 body {
-    font-family: 'Calibri', 'Segoe UI', sans-serif;
-    line-height: 1.5;
-    color: #333333;
-    background-color: #f8fafc;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: sans-serif;
+    transition: background-color 0.3s, color 0.3s;
     padding: 20px;
+}
+
+/* Default Light Mode Colors */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --btn-bg: #eeeeee;
+    --btn-text: #000000;
+}
+
+/* Dark Mode Override Colors */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+    --btn-bg: #333333;
+    --btn-text: #ffffff;
+}
+
+button {
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 .cv-container {
