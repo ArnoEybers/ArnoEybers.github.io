@@ -342,8 +342,7 @@ body.dark-mode .theme-toggle-btn .moon-icon {
 
 .contrib-chart {
     display: block;
-    min-width: 720px;
-    max-width: none;
+    width: 100%;
     height: auto;
 }
 
@@ -416,19 +415,20 @@ body.dark-mode .chart-dark {
     }
 
     .cv-container {
+        display: grid;
         grid-template-columns: 1fr;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 15px;
         gap: 20px;
-        padding: 20px;
+        box-shadow: none;
     }
 
     .sidebar {
         text-align: center;
-        padding-bottom: 20px;
         border-bottom: 1px solid var(--border-color);
-    }
-
-    .main-content {
-        width: 100%;
+        padding-bottom: 20px;
     }
 
     .header-info {
@@ -439,72 +439,7 @@ body.dark-mode .chart-dark {
         justify-content: center;
     }
 
-    .header-info h1 {
-        font-size: 22pt;
-    }
-
-    .section-title {
-        font-size: 13pt;
-    }
-
-    p,
-    li {
-        font-size: 10.5pt;
-    }
-
-    ul,
-    .sub-list {
-        display: inline-block;
-        text-align: left;
-    }
-
     .download-btn {
         width: 100%;
-        max-width: 320px;
-        text-align: center;
-    }
-
-    .theme-toggle-btn {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-
-    .cv-container {
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .header-info h1 {
-        font-size: 18pt;
-    }
-
-    .section-title {
-        font-size: 12pt;
-    }
-
-    p,
-    li {
-        font-size: 10pt;
-    }
-
-    .social-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .download-btn {
-        width: 100%;
-        padding: 12px;
-        font-size: 10pt;
-    }
-
-    .theme-toggle-btn {
-        width: 36px;
-        height: 36px;
     }
 }
