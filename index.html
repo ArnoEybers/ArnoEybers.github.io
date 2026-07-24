@@ -7,19 +7,24 @@
     <title>Arno Eybers - Digital CV</title>
 </head>
 <body>
-
+	
+	<!-- Intro Overlay -->
+    <div id="intro">
+        <h1 class="tracking-in-expand-fwd">Welcome :)</h1>
+    </div>
+	
     <div class="cv-container">
 
         <!-- Left Sidebar -->
         <aside class="sidebar">
-            <img id="imgProfile" alt="Arno Eybers Profile Picture" src="profile.jpg" class="profile-pic">
+            <img id="imgProfile" alt="Arno Eybers Profile Picture" src="assets/profile.jpg" class="profile-pic">
             
             <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
 				<!-- Image shown in Dark Mode-->
-				<img src="sun-icon.png" alt="Light mode" class="theme-icon sun-icon">
+				<img src="assets/sun-icon.png" alt="Light mode" class="theme-icon sun-icon">
 				
 				<!-- Image shown in Light Mode-->
-				<img src="moon-icon.png" alt="Dark mode" class="theme-icon moon-icon">
+				<img src="assets/moon-icon.png" alt="Dark mode" class="theme-icon moon-icon">
 			</button>
             
             <h2 class="section-title">Other Experience</h2>
@@ -43,24 +48,27 @@
                 <p><strong>Contact info:</strong></p>
                 <p>Email: <a href="mailto:ArnoEybers@GMail.com">ArnoEybers@GMail.com</a></p>
                 
+				<!-- Social links images -->
                 <div class="social-links">
                     <a href="http://www.linkedin.com/in/arno-eybers-79b53728a" target="_blank" rel="noopener noreferrer">
-                        <img src="linkedin-icon.png" alt="LinkedIn Profile" class="social-icon">
+                        <img src="assets/linkedin-icon.png" alt="LinkedIn Profile" class="social-icon">
                     </a>
                     <a href="https://github.com/ArnoEybers" target="_blank" rel="noopener noreferrer">
-                        <img src="github-icon.png" alt="GitHub Profile" class="social-icon">
+                        <img src="assets/github-icon.png" alt="GitHub Profile" class="social-icon">
                     </a>
                 </div>
             </header>
-
+			
+			<!-- About me section -->
             <section>
                 <h2 class="section-title">About Me</h2>
-				<p><strong>Hello! I'm Arno.</strong><br>
-                I am currently a student at the NWU hoping to pursue my honours degree and eventually become a Data Analyst.<br>
-				I have a love for programming and problem solving with the use of technology.<br>
-                I love a challenge and will do my best to accomplish any goal set before me.</p>
+				<p><strong>Hello! My name is Arno.</strong><br>
+				I'm a passionate final year student at North-West University (NWU) aspiring to complete my Honours degree and build a career as a Data Analyst.<br>
+				I love turning complex problems into elegant solutions through code and technology. Whether it's analyzing data, building tools, or tackling new challenges, I thrive on continuous learning and delivering results.<br>
+				I'm always up for a good challenge and committed to seeing every goal through to the end.</p>
             </section>
 
+			<!-- Education section -->
             <section>
                 <h2 class="section-title">Education</h2>
                 <p><strong>North-West University</strong></p>
@@ -74,6 +82,7 @@
                 </ul>
             </section>
 
+			<!-- Skills section -->
             <section>
                 <h2 class="section-title">Skills</h2>
                 <ul>
@@ -85,6 +94,7 @@
                 </ul>
             </section>
 			
+			<!-- Github projects section -->
 			<section>
 				<h2 class="section-title">GitHub Projects</h2>
 				<div id="projects-container" class="projects-grid">
@@ -92,6 +102,7 @@
 				</div>
 			</section>
 			
+			<!-- Github contributions section -->
 			<section>
 				<h2 class="section-title">GitHub Contributions</h2>
 				<div class="contributions-container">
@@ -107,12 +118,12 @@
 				</div>
 			</section>
         </main>
-
     </div>
 	
+	<!-- Download button -->
 	<div class="download-container">
-    <a href="Arno Eybers - CV.pdf" download="Arno Eybers - CV.pdf" class="download-btn">Download CV as a PDF</a>
-</div>
+		<a href="Arno Eybers - CV.pdf" download="Arno Eybers - CV.pdf" class="download-btn">Download CV as a PDF</a>
+	</div>
 	
     <script src="basicScript.js"></script>
 </body>

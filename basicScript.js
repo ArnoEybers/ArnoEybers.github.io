@@ -1,61 +1,82 @@
-const toggleButton = document.getElementById('theme-toggle');
-const currentTheme = localStorage.getItem('theme');
+/* Constant variables */
 
-if (currentTheme === 'dark') 
-{
-    document.body.classList.add('dark-mode');
+//Themes
+const toggleButton = document.getElementById("theme-toggle");
+
+//Intro
+const intro = document.getElementById("intro");
+const content = document.getElementById("content");
+
+//Github
+const githubUsername = "ArnoEybers";
+const projectsContainer = document.getElementById("projects-container");
+
+/* Theme toggles */
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
 }
 
-if (toggleButton) 
-{
-    toggleButton.addEventListener('click', () => 
-	{
-        document.body.classList.toggle('dark-mode');
-        
-        if (document.body.classList.contains('dark-mode')) 
-		{
-            localStorage.setItem('theme', 'dark');
-        } 
-		else 
-		{
-            localStorage.setItem('theme', 'light');
-        }
-    });
+// Toggle theme
+toggleButton?.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark-mode") ? "dark" : "light"
+    );
+});
+
+/* Intro animation */
+if (intro && content) {
+    if (sessionStorage.getItem("introPlayed")) {
+        intro.remove();
+        content.style.opacity = "1";
+    } else {
+        sessionStorage.setItem("introPlayed", "true");
+
+        setTimeout(() => {
+            intro.remove();
+        }, 2600);
+    }
 }
 
-// Fetch Public Repos from GitHub API
-const githubUsername = 'ArnoEybers';
-const projectsContainer = document.getElementById('projects-container');
-
+/* Github projects section code */
 if (projectsContainer) {
     fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=6`)
         .then(response => response.json())
         .then(repos => {
-            projectsContainer.innerHTML = ''; // Clear loading placeholder
-            
-            // Filter out forks if you only want original projects
-            const originalRepos = repos.filter(repo => !repo.fork);
+            projectsContainer.innerHTML = "";
 
-            originalRepos.forEach(repo => {
-                const card = document.createElement('div');
-                card.classList.add('project-card');
+            repos
+                .filter(repo => !repo.fork)
+                .forEach(repo => {
+                    const card = document.createElement("div");
+                    card.className = "project-card";
 
-                card.innerHTML = `
-                    <div class="project-title">
-                        <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
-                            ${repo.name} ↗
-                        </a>
-                    </div>
-                    <p class="project-desc">${repo.description || 'No description provided.'}</p>
-                    <div class="project-meta">
-                        ${repo.language ? `<span><b>Language:</b> ${repo.language}</span>` : ''}
-                    </div>
-                `;
-                projectsContainer.appendChild(card);
-            });
+                    card.innerHTML = `
+                        <div class="project-title">
+                            <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                                ${repo.name} ↗
+                            </a>
+                        </div>
+
+                        <p class="project-desc">
+                            ${repo.description || "No description provided."}
+                        </p>
+
+                        <div class="project-meta">
+                            ${repo.language ? `<span><b>Language:</b> ${repo.language}</span>` : ""}
+                        </div>
+                    `;
+
+                    projectsContainer.appendChild(card);
+                });
         })
         .catch(error => {
-            console.error('Error fetching GitHub repos:', error);
-            projectsContainer.innerHTML = '<p>Unable to load GitHub projects at this time.</p>';
+            console.error("Error fetching GitHub repos:", error);
+
+            projectsContainer.innerHTML =
+                "<p>Unable to load GitHub projects at this time.</p>";
         });
 }
