@@ -38,6 +38,7 @@ body.dark-mode {
 
 /* Base elements */
 body {
+	overflow-x: hidden;
     font-family: sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -46,6 +47,20 @@ body {
     transition:
         background-color 0.3s ease,
         color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p,
+li {
+    overflow-wrap: break-word;
+}
+
+a {
+    word-break: break-word;
 }
 
 p {
@@ -121,8 +136,8 @@ li {
 
 /* Profile elements */
 .profile-pic {
-    width: 140px;
-    height: 140px;
+    width: min(140px, 45vw);
+    height: min(140px, 45vw);
 
     display: block;
     margin: 0 auto;
@@ -327,7 +342,8 @@ body.dark-mode .theme-toggle-btn .moon-icon {
 
 .contrib-chart {
     display: block;
-    width: 100%;
+    min-width: 720px;
+    max-width: none;
     height: auto;
 }
 
@@ -390,4 +406,105 @@ body.dark-mode .chart-dark {
 
 @keyframes showContent {
     to { opacity: 1; }
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    .cv-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .sidebar {
+        text-align: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .main-content {
+        width: 100%;
+    }
+
+    .header-info {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .header-info h1 {
+        font-size: 22pt;
+    }
+
+    .section-title {
+        font-size: 13pt;
+    }
+
+    p,
+    li {
+        font-size: 10.5pt;
+    }
+
+    ul,
+    .sub-list {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .download-btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+
+    .theme-toggle-btn {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .cv-container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .header-info h1 {
+        font-size: 18pt;
+    }
+
+    .section-title {
+        font-size: 12pt;
+    }
+
+    p,
+    li {
+        font-size: 10pt;
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .download-btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 10pt;
+    }
+
+    .theme-toggle-btn {
+        width: 36px;
+        height: 36px;
+    }
 }

@@ -1,17 +1,19 @@
 /* Constant variables */
 
-//Themes
+// Theme
 const toggleButton = document.getElementById("theme-toggle");
 
-//Intro
+// Intro
 const intro = document.getElementById("intro");
 const content = document.getElementById("content");
 
-//Github
+// GitHub
 const githubUsername = "ArnoEybers";
 const projectsContainer = document.getElementById("projects-container");
 
-/* Theme toggles */
+
+/* Theme */
+
 // Load saved theme
 if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
@@ -27,7 +29,9 @@ toggleButton?.addEventListener("click", () => {
     );
 });
 
-/* Intro animation */
+
+/* Intro */
+
 if (intro && content) {
     if (sessionStorage.getItem("introPlayed")) {
         intro.remove();
@@ -41,16 +45,20 @@ if (intro && content) {
     }
 }
 
-/* Github projects section code */
+
+/* GitHub Projects */
+
 if (projectsContainer) {
     fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=6`)
         .then(response => response.json())
         .then(repos => {
+
             projectsContainer.innerHTML = "";
 
             repos
                 .filter(repo => !repo.fork)
                 .forEach(repo => {
+
                     const card = document.createElement("div");
                     card.className = "project-card";
 
@@ -66,17 +74,20 @@ if (projectsContainer) {
                         </p>
 
                         <div class="project-meta">
-                            ${repo.language ? `<span><b>Language:</b> ${repo.language}</span>` : ""}
+                            ${repo.language ? `<span><strong>Language:</strong> ${repo.language}</span>` : ""}
                         </div>
                     `;
 
                     projectsContainer.appendChild(card);
                 });
+
         })
         .catch(error => {
-            console.error("Error fetching GitHub repos:", error);
+
+            console.error("Error fetching GitHub repositories:", error);
 
             projectsContainer.innerHTML =
                 "<p>Unable to load GitHub projects at this time.</p>";
+
         });
 }
