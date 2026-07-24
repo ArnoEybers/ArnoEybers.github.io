@@ -347,3 +347,47 @@ body.dark-mode .chart-light {
 body.dark-mode .chart-dark {
     display: block;
 }
+
+/* Intro */
+#intro {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: #111;
+    z-index: 9999;
+    animation: fadeOut .8s ease 1.8s forwards;
+}
+
+#content {
+    opacity: 0;
+    animation: showContent .5s ease 2.2s forwards;
+}
+
+.tracking-in-expand-fwd {
+    animation: tracking-in-expand-fwd .8s cubic-bezier(.215,.61,.355,1) both;
+}
+
+@keyframes tracking-in-expand-fwd {
+    0% {
+        letter-spacing: -.5em;
+        transform: translateZ(-700px);
+        opacity: 0;
+    }
+    40% { opacity: .6; }
+    100% {
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes showContent {
+    to { opacity: 1; }
+}
